@@ -1,0 +1,56 @@
+<head>
+  <title>test</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Attendence</h1>
+      <form class="insertStudent">
+        <input type="text" name="beacon" placeholder="Input here">
+        <input type="submit" value="GOGO">
+      </form>
+    </header>
+    <!-- <ul>
+      {{#each presentStudents}}
+        {{> listPresence}}
+      {{/each}}
+    </ul> -->
+    <table id='list' class='list_students'>
+        <tr>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Beacon ID</th>
+            <th>1. Block</th>
+            <th>2. Block</th>
+            <th>3. Block</th>
+            <th>4. Block</th>
+        </tr>
+        {{#each presentStudents}}
+            {{> listingPresence}}
+        {{/each}}
+    </table>
+  </div>
+
+</body>
+
+<template name="listingPresence">
+  <tr>
+      <th>{{firstName}}</th>
+      <th>{{lastName}}</th>
+      <th>{{beaconID}}</th>
+      <th class="{{#if checked}}checked{{/if}}">
+          <input type="checkbox" checked="{{block1}}" class="toggled1">
+      </th>
+      <th class="{{#if checked}}checked{{/if}}">
+          <input type="checkbox" checked="{{block2}}" class="toggled2">
+      </th>
+      <th class="{{#if checked}}checked{{/if}}">
+          <input type="checkbox" checked="{{block3}}" class="toggled3">
+      </th>
+      <th class="{{#if checked}}checked{{/if}}">
+          <input type="checkbox" checked="{{block4}}" class="toggled4">
+      </th>
+  </tr>
+</template>
