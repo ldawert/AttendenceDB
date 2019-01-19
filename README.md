@@ -1,0 +1,2 @@
+# AttendenceDB
+Meteor MongoDB Project
