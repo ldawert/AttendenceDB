@@ -1,56 +1,76 @@
 <head>
-  <title>test</title>
+    <meta charset='utf—8' name='theme—color' content='#282A36'>
+    <title>Anwesenheit</title>
+    <!-- This website includes -->
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!-- Currently not in use but later needed to get nice icons for the buttons to switch between the dates.
+    <script defer src='https://use.fontawesome.com/releases/v5.0.2/js/all.js'></script>
+    -->
 </head>
 
 <body>
-
-  <div class="container">
-    <header>
-      <h1>Attendence</h1>
-      <form class="insertStudent">
-        <input type="text" name="beacon" placeholder="Input here">
-        <input type="submit" value="GOGO">
-      </form>
+    <header class=''>
+        <div class='heading'>Anwesenheitliste</div>
     </header>
-    <!-- <ul>
-      {{#each presentStudents}}
-        {{> listPresence}}
-      {{/each}}
-    </ul> -->
-    <table id='list' class='list_students'>
-        <tr>
-            <th>Vorname</th>
-            <th>Nachname</th>
-            <th>Beacon ID</th>
-            <th>1. Block</th>
-            <th>2. Block</th>
-            <th>3. Block</th>
-            <th>4. Block</th>
-        </tr>
-        {{#each presentStudents}}
-            {{> listingPresence}}
-        {{/each}}
-    </table>
-  </div>
 
+    <div class='backboard'>
+        <header class=''>
+            <div id='search_space'>
+                <form class='insertStudent'>
+                    <input id='beacon_input' type='text' name='beacon' placeholder='Input beacon ID' autocomplete='off'>
+                    <input type='submit' value='GOGO' style='display: none'>
+                </form>
+            </div>
+        </header>
+    </div>
+
+    <content>
+        <div class='backboard'>
+            <div class='pagecontent'>
+                <div id='cat_list' class=''>
+                    <table id='list' class='list_students'>
+                        <tr>
+                            <!--
+                            <th class='cnt'>Nr.</th>
+                            -->
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Beacon ID</th>
+                            <th>1. Block</th>
+                            <th>2. Block</th>
+                            <th>3. Block</th>
+                            <th>4. Block</th>
+                        </tr>
+                        {{#each presentStudents}}
+                            {{> listingPresence}}
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </content>
 </body>
 
-<template name="listingPresence">
-  <tr>
-      <th>{{firstName}}</th>
-      <th>{{lastName}}</th>
-      <th>{{beaconID}}</th>
-      <th class="{{#if checked}}checked{{/if}}">
-          <input type="checkbox" checked="{{block1}}" class="toggled1">
-      </th>
-      <th class="{{#if checked}}checked{{/if}}">
-          <input type="checkbox" checked="{{block2}}" class="toggled2">
-      </th>
-      <th class="{{#if checked}}checked{{/if}}">
-          <input type="checkbox" checked="{{block3}}" class="toggled3">
-      </th>
-      <th class="{{#if checked}}checked{{/if}}">
-          <input type="checkbox" checked="{{block4}}" class="toggled4">
-      </th>
-  </tr>
+<template name='listingPresence'>
+    <tr>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{beaconID}}</td>
+        <td class='{{#if checked}}checked{{/if}}'>
+            <input type='checkbox' id='{{checkbox1}}' checked='{{block1}}' class='toggled1'>
+            <label for='{{checkbox1}}'>1. Block</label>
+        </td>
+        <td class='{{#if checked}}checked{{/if}}'>
+            <input type='checkbox' id='{{checkbox2}}' checked='{{block2}}' class='toggled2'>
+            <label for='{{checkbox2}}'>2. Block</label>
+        </td>
+        <td class='{{#if checked}}checked{{/if}}'>
+            <input type='checkbox' id='{{checkbox3}}' checked='{{block3}}' class='toggled3'>
+            <label for='{{checkbox3}}'>3. Block</label>
+        </td>
+        <td id='myCheckBox' class='{{#if checked}}checked{{/if}}'>
+            <input type='checkbox' id='{{checkbox4}}' checked='{{block4}}' class='toggled4'>
+            <label for='{{checkbox4}}'>4. Block</label>
+        </td>
+    </tr>
 </template>

@@ -10,22 +10,31 @@ function getDate(){
 }
 
 function init(){
-  var date = getDate();
-  const allStudents = ListDB.find().fetch();
-  for (var student of allStudents){
-    PresenceDB.insert(
-    {
-      _id: newObjectID = new Mongo.ObjectID(),
-      beaconID: student.beaconID,
-      firstName: student.firstName,
-      lastName: student.lastName,
-      block1: false,
-      block2: false,
-      block3: false,
-      block4: false,
-      date: date
-    });
-  }
+	var date = getDate();
+	const presentStudents = PresenceDB.find({date: date}).fetch();
+	let initNeeded = (presentStudents[0] == null ? true : false);
+	if (initNeeded){
+	  var date = getDate();
+	  const allStudents = ListDB.find().fetch();
+	  for (var student of allStudents){
+	    PresenceDB.insert(
+	    {
+	      _id: newObjectID = new Mongo.ObjectID(),
+	      beaconID: student.beaconID,
+	      firstName: student.firstName,
+	      lastName: student.lastName,
+	      block1: false,
+	      block2: false,
+	      block3: false,
+	      block4: false,
+				checkbox1: newObjectID1 = new Mongo.ObjectID(),
+				checkbox2: newObjectID2 = new Mongo.ObjectID(),
+				checkbox3: newObjectID3 = new Mongo.ObjectID(),
+				checkbox4: newObjectID4 = new Mongo.ObjectID(),
+	      date: date
+	    });
+	  }
+	}
 }
 
 
