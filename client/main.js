@@ -51,8 +51,6 @@ Template.body.helpers({
     }
 });
 
-Template.
-
 Template.body.events({
     // Update the presence for a scanned student for a specific lesson or create the document if necessary
     'submit .insertStudent': function(event) {
