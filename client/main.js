@@ -93,7 +93,6 @@ Template.body.events({
                     {$set: obj}
                 );
             } else {
-                alert("update started");
                 const currentBlockString = "block" + currentBlock;
                 let obj = {};
                 obj[currentBlockString] = true;
