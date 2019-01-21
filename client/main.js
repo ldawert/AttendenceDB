@@ -112,19 +112,15 @@ Template.body.events({
 
 Template.listingPresence.events({
     'click .toggled1': function() {
-        alert(this._id);
         PresenceDB.update(this._id, { $set: {block1: !this.block1}})
     },
     'click .toggled2': function() {
-        alert(this._id);
         PresenceDB.update(this._id, { $set: {block2: !this.block2}})
     },
     'click .toggled3': function() {
-        alert(this._id);
         PresenceDB.update(this._id, { $set: {block3: !this.block3}})
     },
     'click .toggled4': function() {
-        alert(this._id);
         PresenceDB.update(this._id, { $set: {block4: !this.block4}})
     }
 });
