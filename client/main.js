@@ -92,7 +92,7 @@ function getBlock(time){
         block = 2;
     } else if (1100 < time && time < 1245){
         block = 3;
-    } else if (1245 < time && time < 11505){
+    } else if (1245 < time && time < 1505){
         block = 4;
     }
     return block;
@@ -103,7 +103,7 @@ function generatePresenceDatabaseEntries() {
     // Create an array filled with the information for each student presences
     const match = PresenceDB.find({date: Session.get('selectedDate')}).fetch();
     if(match[0] == null) {
-        // If the array of presences isn't empty create a new array filled with the needed information for each student
+        // If the array of presences is empty create a new array filled with the needed information for each student
         const allStudents = ListDB.find().fetch();
         // Go through each student element and create a new presence entry
         for(i = 0; i < allStudents.length; i++) {
