@@ -6,13 +6,8 @@
 /*------------------------------------------------------
         Searchbox
 ------------------------------------------------------*/
-#search_space {
+#input_space {
     width: 100%;
-}
-#searchbox {
-    min-width: 12ch;
-    margin: auto;
-    text-align: center;
 }
 
 #beacon_input {
@@ -28,13 +23,8 @@
     transition: color 300ms, border 300ms, max-width 500ms ease-in-out, box-shadow 500ms, border-radius 300ms;
 }
 
-#search_input:focus {
-    max-width: calc(100% - (2 * var(--default-margin)) + 8px);
-    transition: color 300ms, border 300ms, max-width 500ms ease-in, box-shadow 500ms, border-radius 300ms;
-}
-
 /*------------------------------------------------------
-        Searchbox
+        Textbox
 ------------------------------------------------------*/
 input[type='text'], input[type='password'] {
     background: var(--bg1-color);
@@ -80,7 +70,6 @@ input[type='checkbox'] + label {
     height: 20px;
     display: block;
     position: relative;
-    margin: auto;
     margin: -20px auto 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -93,6 +82,16 @@ input[type='checkbox'] + label {
     -moz-transition: 0.5s ease all;
     -webkit-transition: 0.5s ease all;
     cursor: pointer;
+}
+
+input[type='checkbox']:hover + label {
+    border: 1px solid var(--child14-color);
+}
+
+input[type='checkbox']:checked:hover + label {
+    border: 1px solid var(--child14-color);
+    background: var(--child03-color);
+
 }
 
 input[type='checkbox']:checked + label {

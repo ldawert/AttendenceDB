@@ -3,9 +3,8 @@
     <title>Anwesenheit</title>
     <!-- This website includes -->
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <!-- Currently not in use but later needed to get nice icons for the buttons to switch between the dates.
+    <!-- Currently not in use but later needed to get nice icons for the buttons to switch between the dates. -->
     <script defer src='https://use.fontawesome.com/releases/v5.0.2/js/all.js'></script>
-    -->
 </head>
 
 <body>
@@ -15,11 +14,16 @@
 
     <div class='backboard'>
         <header class=''>
-            <div id='search_space'>
+            <div id='input_space'>
                 <form class='insertStudent'>
                     <input id='beacon_input' type='text' name='beacon' placeholder='Input beacon ID' autocomplete='off'>
-                    <input type='submit' value='GOGO' style='display: none'>
+                    <input type='submit' style='display: none'>
                 </form>
+            </div>
+            <div id='date_space'>
+                <i id='previous_date' class='fas fa-angle-left date_space_content previousDateClick'></i>
+                <div id='current_date' class='date_space_content'></div>
+                <i id='next_date' class='fas fa-angle-right date_space_content nextDateClick'></i>
             </div>
         </header>
     </div>
